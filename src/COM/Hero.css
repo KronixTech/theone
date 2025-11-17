@@ -1,0 +1,214 @@
+/* src/Components/HeroSection/Hero.css */
+
+/* ======================================= */
+/* DEFAULT (DESKTOP) STYLES - (Existing Code) */
+/* ======================================= */
+.hero-top-title {
+  padding: 80px 0 60px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 8em;
+  /* Desktop size */
+  color: #333;
+  letter-spacing: 3px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.hero-image-overlay {
+  height: 1042px;
+  /* Desktop height */
+  background-image: url('../Assets/hero-bg.webp');
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: flex-end;
+  /* Bottom alignment */
+  justify-content: center;
+  /* Center alignment (Desktop) */
+}
+
+.hero-text-content {
+  color: #fff;
+  text-align: center;
+  /* Desktop alignment */
+  padding: 100px 20px;
+}
+
+.hero-main-phrase {
+  font-size: 3.5em;
+  /* Desktop size */
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.1em;
+  /* Desktop size */
+}
+
+/* ======================================================
+⭐ MOBILE ALIGNMENT STYLES (Max-width: 480px)
+====================================================== 
+*/
+@media (max-width: 480px) {
+
+  /* src/Components/HeroSection/Hero.css */
+
+  /* ======================================= */
+  /* DEFAULT (DESKTOP) STYLES - (Existing Code) */
+  /* ======================================= */
+  .hero-top-title {
+    padding: 80px 0 60px;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 8em;
+    /* Desktop size */
+    color: #333;
+    letter-spacing: 3px;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  .hero-image-overlay {
+    height: 1042px;
+    /* Desktop height */
+    background-image: url('../Assets/hero-bg.webp');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: flex-end;
+    /* Bottom alignment */
+    justify-content: center;
+    /* Center alignment (Desktop) */
+  }
+
+  .hero-text-content {
+    color: #fff;
+    text-align: center;
+    /* Desktop alignment */
+    padding: 100px 20px;
+  }
+
+  .hero-main-phrase {
+    font-size: 3.5em;
+    /* Desktop size */
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1em;
+    /* Desktop size */
+  }
+
+  /* ======================================================
+⭐ MOBILE ALIGNMENT STYLES (Max-width: 480px)
+====================================================== 
+*/
+  @media (max-width: 480px) {
+
+    /* --- 1. Top Title Adjustment ("THE ONE CAST") --- */
+    .hero-top-title {
+      /* Tighter vertical space for small screens */
+      padding: 40px 0 20px;
+      margin-top: 10px;
+      /* Smaller font size than a tablet to fit snugly */
+      font-size: 3.2em;
+
+      /* Slightly reduce letter spacing to save horizontal space */
+      letter-spacing: 2px;
+    }
+
+    /* --- 2. Image Overlay Adjustment --- */
+    .hero-image-overlay {
+      /* Use a responsive height (Viewport Height) */
+      height: 75vh;
+
+      /* Pin content to the bottom-left corner */
+      justify-content: flex-start;
+
+      /* Adjust image focus to center top */
+      background-position: center top;
+    }
+
+    /* --- 3. Text Content Alignment --- */
+    .hero-text-content {
+      /* Align text to the left as seen in the screenshot */
+      text-align: left;
+
+      /* Tighter padding on the bottom and sides */
+      padding: 0 20px 20px;
+    }
+
+    /* --- 4. Main Phrase Adjustment ("RELEASE EMOTIONS...") --- */
+    .hero-main-phrase {
+      /* Mobile font size */
+      font-size: 1.8em;
+
+      /* Ensure line breaks are respected */
+      white-space: pre-line;
+      line-height: 1.1;
+      /* Tighter line spacing */
+      margin-bottom: 5px;
+    }
+
+    /* --- 5. Subtitle Adjustment ("Feelings and emotions...") --- */
+    .hero-subtitle {
+      /* Smallest font size for readability on phones */
+      font-size: 0.8em;
+      line-height: 1.4;
+
+      /* Ensure margin is reset for left alignment */
+      margin: 0;
+    }
+  }
+
+  /* --- 2. Image Overlay Adjustment --- */
+  .hero-image-overlay {
+    /* Use a responsive height (Viewport Height) */
+    height: 90vh;
+    /* Increased from 75vh (Adjust this value as needed) */
+    /* Pin content to the bottom-left corner */
+    justify-content: flex-start;
+
+    /* Adjust image focus to center top */
+    background-position: center top;
+  }
+
+  /* --- 3. Text Content Alignment --- */
+  .hero-text-content {
+    /* Align text to the left as seen in the screenshot */
+    text-align: left;
+
+    /* Tighter padding on the bottom and sides */
+    padding: 0 20px 20px;
+    margin-bottom: 70px;
+    /* Add some space below the text */
+  }
+
+  /* --- 4. Main Phrase Adjustment ("RELEASE EMOTIONS...") --- */
+  .hero-main-phrase {
+    /* Mobile font size */
+    font-size: 1.8em;
+    /* Ensure line breaks are respected */
+    white-space: pre-line;
+    line-height: 1.1;
+    /* Tighter line spacing */
+    margin-bottom: 5px;
+  }
+
+  /* --- 5. Subtitle Adjustment ("Feelings and emotions...") --- */
+  .hero-subtitle {
+    /* Smallest font size for readability on phones */
+    font-size: 0.8em;
+    line-height: 1.4;
+
+    /* Ensure margin is reset for left alignment */
+    margin: 0;
+  }
+}

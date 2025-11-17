@@ -1,0 +1,159 @@
+/* --- Global Container and Title --- */
+.about-section {
+  max-width: 900px;
+  /* Constrain the overall width */
+  margin: 60px auto;
+  /* Center the section and add vertical spacing */
+  padding: 0 20px;
+  text-align: center;
+  /* Center the title and images */
+}
+
+.about-title {
+  /* Use an actual serif font if available, e.g., 'Playfair Display' */
+  padding: 40px 0 60px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 5em;
+  /* Desktop size */
+  color: #333;
+  letter-spacing: 3px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.about-divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 0 auto 50px auto;
+  width: 90%;
+}
+
+/* --- Content Layout (Centering the text and images) --- */
+.about-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center the image stack and text block */
+}
+
+/* --- Image Stacking Effect --- */
+.about-image-stack {
+  position: relative;
+  /* INCREASED SIZE */
+  width: 400px;
+  /* Increased from 300px */
+  height: 450px;
+  /* Increased from 350px */
+  margin-bottom: 50px;
+}
+
+.about-image {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #fff;
+  /* Optional: A subtle white border */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  /* Soft shadow for depth */
+}
+
+/* Image A (Bottom/Left - slightly rotated right) */
+.image-a {
+  /* INCREASED SIZE */
+  width: 300px;
+  /* Increased from 200px */
+  height: 350px;
+  /* Increased from 250px */
+  top: 60px;
+  /* Adjusted position to fit new size */
+  left: -40px;
+  transform: rotate(-5deg);
+  /* Counter-clockwise rotation */
+  z-index: 1;
+  /* Keep it on top */
+  background-image: url('../Assets/ABT1.png');
+  /* 💥 NEW: Set opacity to 50% for ABT1 (image-a) */
+  opacity: 0.9;
+}
+
+/* Image B (Top/Right - slightly rotated left) */
+.image-b {
+  /* INCREASED SIZE */
+  width: 350px;
+  /* Increased from 250px */
+  height: 400px;
+  /* Increased from 300px */
+  top: 0;
+  right: 0;
+  transform: rotate(5deg);
+  /* Clockwise rotation */
+  z-index: 2;
+  /* Ensure it overlaps image A correctly */
+  background-image: url('../Assets/pp11.jpg');
+}
+
+/* --- Text Block Styling --- */
+.about-text-block {
+  max-width: 650px;
+  /* Constrain the width of the text */
+  text-align: justify;
+  /* Justify text to match the design */
+  line-height: 1.8;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.about-text-block p {
+  margin-bottom: 1.5em;
+}
+
+.closing-line {
+  margin-top: 40px;
+  font-style: italic;
+  text-align: center;
+  text-align: justify;
+  /* Reset to justify if needed, or keep center for final lines */
+}
+
+.signature {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1em;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .about-title {
+    font-size: 3em;
+  }
+
+  /* INCREASED SIZE FOR MOBILE */
+  .about-image-stack {
+    width: 350px;
+    /* Increased from 250px */
+    height: 400px;
+    /* Increased from 300px */
+  }
+
+  .image-b {
+    width: 280px;
+    /* Increased from 200px */
+    height: 320px;
+    /* Increased from 240px */
+  }
+
+  .image-a {
+    width: 240px;
+    /* Increased from 160px */
+    height: 280px;
+    /* Increased from 200px */
+  }
+
+  .about-text-block {
+    text-align: left;
+    /* Justified text often looks bad on narrow screens */
+  }
+}

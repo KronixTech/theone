@@ -1,0 +1,176 @@
+/* --- Main Section Layout --- */
+.product-photography-section {
+    /* This container helps center the content and maintain a max-width if needed */
+    max-width: 1200px;
+    /* Example max width */
+    margin: 40px auto;
+    /* Center it horizontally */
+    padding: 0 20px;
+
+}
+
+/* --- Image Gallery Layout (Horizontal Alignment) --- */
+.image-gallery {
+    display: flex;
+    justify-content: center;
+    /* Center the images */
+    align-items: flex-start;
+    /* Align images at the top */
+    gap: 20px;
+    /* Space between the two image containers */
+}
+
+.image-container {
+    /* General styling for image containers */
+    flex: 0 1 45%;
+    /* Allows containers to grow/shrink but not too much, and sets a base width */
+    max-width: 550px;
+    /* Optional: control max size of images */
+    height: 0;
+    padding-bottom: 30%;
+    /* Aspect ratio hack: 30% of parent width for height (adjust as needed) */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Specific Image Styles (using background images for simplicity here) */
+/* **NOTE:** In a real project, use <img> tags and import the images for better performance/SEO. */
+.lipstick-shot {
+    background-image: url('../Assets/p-lips.png');
+    /* Replace with actual path */
+    /* This image appears slightly shorter/wider in the design */
+    padding-bottom: 50%;
+    /* Adjusting aspect ratio for the first image */
+    background-position: bottom;
+}
+
+.coke-shot {
+    background-image: url('../Assets/p-bottle.png');
+    /* Replace with actual path */
+    background-position: fixed;
+    background-size: cover;
+}
+
+
+/* --- Content Area Layout --- */
+.content-area {
+    /* Align text to match the left margin of the images/design */
+    max-width: 1200px;
+    /* Center the content-area itself */
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    /* Use an actual serif font if available, e.g., 'Playfair Display' */
+    padding: 60px 0 60px;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 5em;
+    /* Desktop size */
+    color: #333;
+    letter-spacing: 3px;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.section-description {
+    max-width: 850px;
+    /* Keep text from being too wide, matching the design */
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 25px;
+
+    /* --- FIX 1: This centers the block element (the paragraph itself) --- */
+    margin-left: auto;
+    margin-right: auto;
+    /* or the shorthand: margin: 0 auto 25px auto; */
+
+    /* The text inside the block is already centered by the parent, but let's keep this */
+    text-align: center;
+
+}
+
+/* --- Button Styling --- */
+.see-more-button {
+    background: none;
+    color: inherit;
+    border: 1px solid #000;
+    padding: 10px 20px;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.see-more-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+
+    /* --- General Section Adjustments --- */
+    .product-photography-section {
+        margin: 20px auto;
+        padding: 0 10px;
+        /* Ensure no max-width is causing overflow issues here, 
+           though 1200px should be fine. */
+    }
+
+    /* --- Title and Text Readability --- */
+    .section-title {
+        font-size: 2.5em;
+        /* Smaller title for mobile */
+        padding: 20px 0;
+        letter-spacing: normal;
+    }
+
+    .section-description {
+        font-size: 0.9em;
+        padding: 0 10px;
+        max-width: 100%;
+        /* Ensure text fits */
+    }
+
+    /* --- Gallery Layout FIX: Force Stack and Full Width --- */
+    .image-gallery {
+        flex-direction: column;
+        /* FORCES STACKING */
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* --- Image Container FIX: Crucial Overrides --- */
+    .image-container {
+        /* Set to full width and remove max-width constraints */
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 100%;
+
+        /* *** CRITICAL FIXES: Overriding the Aspect Ratio Hack *** */
+        height: 250px !important;
+        /* Set a specific, manageable height for mobile (e.g., 250px) */
+        padding-bottom: 0 !important;
+        /* Eliminate the padding hack that may be calculating incorrectly */
+        margin: 0;
+        /* Remove any unexpected margins */
+    }
+
+    /* Ensure the background images cover the new fixed height */
+    .lipstick-shot,
+    .coke-shot {
+        background-size: cover;
+        background-position: center;
+        /* Re-apply the specific fixed height just in case, using !important */
+        height: 250px !important;
+    }
+
+    /* --- Button and Content Area --- */
+    .content-area {
+        margin-top: 30px;
+    }
+}

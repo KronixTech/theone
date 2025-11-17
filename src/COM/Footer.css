@@ -1,0 +1,218 @@
+/* ======================================= */
+/* 1. BASE FOOTER STYLES */
+/* ======================================= */
+.footer-container {
+  background-color: #212121;
+  /* Dark background color */
+  color: #c0c0c0;
+  /* Light gray text color for contrast */
+  font-family: 'Times New Roman', serif;
+  /* Elegant serif font */
+  padding-top: 60px;
+  /* Top padding for the main section */
+}
+
+.footer-top-title {
+  padding: 80px 0 60px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 8em;
+  /* Desktop size */
+  color: white;
+  background-attachment: fixed;
+  letter-spacing: 3px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.HR-foot {
+  width: 100%;
+  border: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4e65ff, #0d6efd);
+  /* Gradient underline */
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+/* ======================================= */
+/* 2. MAIN CONTENT GRID (DESKTOP) */
+/* ======================================= */
+.footer-main-content {
+  display: flex;
+  justify-content: space-around;
+  /* Distributes columns across the width */
+  align-items: flex-start;
+  max-width: 1200px;
+  /* Optional: Limit max width on large screens */
+  margin: 0 auto;
+  padding: 0 40px 60px;
+  /* Padding for the bottom of the main section */
+  margin-top: 30px;
+}
+
+.footer-column {
+  /* Common styles for all columns */
+  flex: 1;
+  min-width: 150px;
+  line-height: 1.8;
+}
+
+/* Column 1: Contact Info */
+.contact-info {
+  flex: 1.5;
+  /* Give the contact info a bit more space */
+}
+
+.studio-title {
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.contact-info p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+/* Columns 2 & 3: Links */
+.nav-links,
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-column a {
+  color: inherit;
+  /* Use the same light gray color */
+  text-decoration: none;
+  margin: 5px 0;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+  /* Subtle hover effect */
+}
+
+
+/* ======================================= */
+/* 3. BOTTOM BAR (COPYRIGHT) */
+/* ======================================= */
+.footer-bottom-bar {
+  background-color: #212121;
+  padding: 20px 0;
+  text-align: center;
+
+  /* Creates the thin gray separator line */
+  border-top: 1px solid #3d3d3d;
+}
+
+.copyright-text {
+  margin: 0;
+  font-size: 0.8em;
+}
+
+/* ======================================= */
+/* 4. RESPONSIVENESS (MOBILE & TABLET) */
+/* ======================================= */
+
+@media (max-width: 768px) {
+  .footer-main-content {
+    /* Stack columns vertically on smaller screens */
+    flex-direction: column;
+    padding: 20px 20px 40px;
+
+  }
+
+  .footer-top-title {
+    padding: 60px 0 60px;
+    font-size: 45px;
+    /* Desktop size */
+    margin: 0;
+  }
+
+
+  .footer-column {
+    margin-bottom: 30px;
+    /* Space between stacked columns */
+    min-width: auto;
+  }
+
+  /* Reset flex property to full width for stacking */
+  .contact-info {
+    flex: initial;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* 1. Global Centering for the Entire Footer */
+  .footer-container {
+    padding-top: 30px;
+    text-align: center;
+    /* This is good for the title and any block elements */
+  }
+
+  .footer-main-content {
+    /* When flex-direction is column, align-items centers the stacked columns */
+    flex-direction: column;
+    align-items: center;
+    /* Ensures the column blocks are centered (if they have a max-width) */
+    padding: 0 15px 30px;
+  }
+
+  /* 2. Centering Individual Columns (Most Important) */
+  .footer-column {
+    /* Ensure the column takes full available width or is centered */
+    width: 100%;
+    margin-bottom: 30px;
+    /* This centers the inline/text content within the column */
+    text-align: center;
+  }
+
+  /* Contact Info Text Centering */
+  .footer-column p {
+    font-size: 1.55em;
+    /* Use explicit text-align for certainty */
+    text-align: center;
+    margin: 5px 0;
+    /* Use sensible vertical margins */
+    /* Remove padding: auto; and margin: auto; as it conflicts with text-align */
+  }
+
+  /* Social Links Fix */
+  /* Target the link container within the column */
+  .social-links {
+    font-size: 1.55em;
+    display: flex;
+    flex-direction: column;
+    /* THIS IS THE KEY: It centers the items (the <a> links) horizontally */
+    align-items: center;
+    justify-content: center;
+    /* Remove the conflicting text-align: center; from here, let the flex property handle it */
+  }
+
+  .social-links a {
+    /* Ensure links behave as a block for full centering control */
+    display: block;
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  /* Hide Nav Links and minor title adjustments */
+  .nav-links {
+    display: none;
+  }
+
+  .studio-title {
+    font-size: 25px;
+    visibility: hidden;
+    /* text-align: center is redundant if parent .footer-column is centered */
+  }
+}

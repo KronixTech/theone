@@ -1,0 +1,149 @@
+/* ProductShowcase.css */
+
+/* --- Base Container --- */
+.showcase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    min-width: 100vw;
+    width: 100%;
+}
+
+/* --- Common Image Placeholder Styles (for demonstration) --- */
+.placeholder-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    /* Slight rounding for a modern look */
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* --- 1. Original Design Section Styles --- */
+
+/* Top Row: Lipsticks and Can */
+.top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.lipstick-item {
+    min-height: 280px;
+    background-image: url('../Assets/p-lips.png');
+    /* Light beige/taupe */
+    background-position: fixed;
+    background-size: cover;
+}
+
+.can-item {
+    min-height: 280px;
+    background-image: url('../Assets/p-coco.png');
+    /* Light beige/taupe */
+    background-position: fixed;
+    background-size: cover;
+}
+
+/* Middle Item: Bottle */
+.bottle-item {
+    width: 250px;
+    min-height: 250px;
+    background-image: url('../Assets/p-tonic.png');
+    /* Light beige/taupe */
+    background-position: fixed;
+    background-size: cover;
+    color: #333;
+    border-radius: 8px;
+}
+
+/* Bottom Item: Jeans */
+.jeans-item {
+    width: 450px;
+    min-height: 450px;
+    background-image: url('../Assets/p-pant.png');
+    /* Light beige/taupe */
+    background-position: fixed;
+    background-size: cover;
+    margin-bottom: 60px;
+    /* Separator for the next design section */
+    border-radius: 8px;
+}
+
+/* --- 2. New Design Section Styles --- */
+
+/* 1. Perfume Bottle on the Beach/Wave */
+.beach-bottle-item {
+    width: 90%;
+    max-width: 850px;
+    /* Responsive limit for large elements */
+    min-height: 300px;
+    background-image: url('../Assets/p-bottle.png');
+    /* Light beige/taupe */
+    background-position: center;
+    background-size: cover;
+}
+
+/* 2. Small Sprayer Bottles */
+.sprayers-item {
+    width: 380px;
+    min-height: 380px;
+    background-image: url('../Assets/p-serum.png');
+    /* Light beige/taupe */
+    background-position: center;
+    background-size: cover;
+}
+
+/* 3. Packaged Item (Clothing/Box) */
+.packaged-item {
+    width: 350px;
+    min-height: 350px;
+    background-image: url('../Assets/p-cloth.png');
+    /* Light beige/taupe */
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (max-width: 480px) {}
+
+.jeans-item {
+    width: 350px;
+
+}
+
+.sprayers-item {
+    width: 350px;
+
+}
+
+/* 4. Shapes and Colors (Paper Cutouts) 
+.shapes-item {
+    width: 90%;
+    max-width: 90%;
+ 
+    min-height: 150px;
+    background-color: #ebebeb;
+
+    color: #333;
+    margin-left: -30px;
+} 
+
+/* 
+.shape-block {
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.shape-purple { background-color: #9b59b6; }
+.shape-orange { background-color: #f39c12; }
+.shape-red { background-color: #e74c3c; } */

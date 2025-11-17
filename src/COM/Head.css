@@ -1,0 +1,164 @@
+/* --- Main Header Container: Controls the hide/show animation --- */
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Bebas+Neue&display=swap');
+
+.header-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #212121;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: top 0.4s ease-in-out;
+
+
+}
+
+.logo-head {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-left: 20px;
+  font-family: "BBH Sans Bartle", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.header-container.hidden {
+  top: -100px;
+  /* Hides the header */
+
+}
+
+.navbar {
+  background-color: transparent !important;
+}
+
+/* --- Desktop Navigation Link Styles --- */
+.nav-link {
+  color: #ffffff !important;
+  /* <-- CHANGE 1: New DEFAULT link color here (e.g., light blue) */
+  font-weight: 500;
+  padding: 0.25rem 0;
+  margin: 0 0.75rem;
+  background-color: transparent;
+  border: none;
+  position: relative;
+  /* Required for the ::after pseudo-element */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #0052f7;
+  /* Darken text on hover for better feedback */
+}
+
+/* The pseudo-element for the underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  /* Adjust this to control space between text and line */
+  left: 0;
+  width: 0;
+  /* Initially hidden */
+  height: 3px;
+  background: linear-gradient(90deg, #4e65ff, #0d6efd);
+  /* Gradient underline */
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Animate the underline on hover AND for the active link */
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Styles for the ACTUALLY active link */
+.nav-link.active {
+  color: white;
+  /* Darker, more prominent text color */
+  font-weight: 600;
+  /* Make it slightly bolder */
+}
+
+
+/* --- Mobile Menu & Toggle Styles --- */
+.menu-toggle {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.menu-toggle:focus {
+  box-shadow: none;
+
+}
+
+.close-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 300;
+  color: white;
+}
+
+.navbar-toggler-icon {
+  /* Use !important here if necessary to override a Bootstrap default */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  /* Positions it right below the header */
+  left: 0;
+  width: 100%;
+  background-color: #212121;
+  border-top: 1px solid #e9ecef;
+  overflow: hidden;
+  max-height: 0;
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.mobile-menu.is-open {
+  max-height: 500px;
+  /* Animate to this height when open */
+  opacity: 1;
+  visibility: visible;
+  color: #000000;
+}
+
+.mobile-menu .nav-item {
+  text-align: center;
+}
+
+
+.mobile-menu .nav-item:hover {
+  text-align: center;
+  color: #0052f7;
+
+}
+
+.mobile-menu .nav-link {
+  padding: 1rem 1.5rem;
+  display: block;
+  border-bottom: none;
+  color: #000000;
+  /* No underline for mobile links */
+}
+
+/* In the mobile menu, the ::after underline is not needed */
+.mobile-menu .nav-link::after {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .desktop-nav {
+    display: none;
+  }
+
+}

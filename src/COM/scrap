@@ -1,0 +1,104 @@
+import React, { useState } from 'react';
+import './Contact.css';
+
+// In a real project, you might import your background image:
+// import backgroundImage from './path/to/your/background-image.jpg';
+
+const ContactSection = () => {
+  // State to manage form inputs (optional, but good practice for controlled components)
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here you would typically send the formData to a backend service
+    console.log('Form submitted:', formData);
+    alert('Thank you for your message! We will get back to you shortly.');
+    // Reset form after submission
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
+  };
+
+  return (
+    <div className="contact-section">
+      <h1 className="contact-title">CONTACT</h1>
+      <hr className="contact-divider" />
+
+      <div className="contact-form-container">
+        <div className="contact-info-text">
+          <h3 className="contact-form-heading">CONTACT FORM</h3>
+          <p>
+            Feel free to reach out to me through this form for any inquiries, project requests,
+            or just to say hello. I'm always excited to hear about new ideas and collaborations.
+          </p>
+          <p>
+            Please provide as much detail as possible about your project so I can provide
+            you with an accurate response.
+          </p>
+          <p className="response-time">
+            I aim to respond to all inquiries within 24-48 hours.
+          </p>
+        </div>
+
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="name"
+            placeholder="Your name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Your phone (optional)"
+            value={formData.phone}
+            onChange={handleChange}
+          />
+          <textarea
+            name="message"
+            placeholder="Your message"
+            rows="5"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
+          <button type="submit" className="submit-button">SEND</button>
+        </form>
+      </div>
+
+      {/* Background image section at the bottom */}
+      <div className="contact-bottom-background">
+        {/* You could place an img tag here if preferred, or handle via CSS background-image */}
+        {/* <img src={backgroundImage} alt="Dramatic hand shot" /> */}
+      </div>
+    </div>
+  );
+};
+
+export default ContactSection;

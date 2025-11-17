@@ -1,0 +1,14 @@
+.footer-visual {
+    width: 100%;
+    height: 680px;
+    margin-top: 20px;
+    background-position: cover;
+    background-size: cover;
+}
+
+@media screen and (max-width: 480px) {
+    .footer-visual {
+        height: 350px;
+    }
+
+}

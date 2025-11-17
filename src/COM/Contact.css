@@ -1,0 +1,185 @@
+/* --- Main Section Container --- */
+.contact-section {
+  width: 100%;
+  margin: 0 auto;
+  /* No max-width for the overall section as the background spans full width */
+  text-align: center;
+}
+
+.contact-title {
+  /* Use an actual serif font if available, e.g., 'Playfair Display' */
+  padding: 60px 0 60px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 5em;
+  /* Desktop size */
+  color: #333;
+  letter-spacing: 3px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 30px;
+}
+
+.contact-divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 0 auto 60px auto;
+  width: 90%;
+}
+
+/* --- Contact Form and Info Layout --- */
+.contact-form-container {
+  display: flex;
+  justify-content: center;
+  /* Center the entire block */
+  gap: 80px;
+  /* Space between text and form */
+  max-width: 1000px;
+  /* Max width for the form+text block */
+  margin: 0 auto 80px auto;
+  /* Center and add space above background image */
+  padding: 0 20px;
+}
+
+.contact-info-text {
+  flex: 1;
+  /* Allow text block to grow/shrink */
+  max-width: 350px;
+  /* Constrain info text width */
+  text-align: left;
+  /* Align text left within its block */
+  line-height: 1.7;
+  color: #555;
+  font-size: 0.9em;
+}
+
+.contact-form-heading {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.contact-info-text p {
+  margin-bottom: 1.2em;
+}
+
+.response-time {
+  font-style: italic;
+  font-size: 0.85em;
+  margin-top: 30px;
+}
+
+/* --- Form Styling --- */
+.contact-form {
+  flex: 1;
+  /* Allow form to grow/shrink */
+  max-width: 450px;
+  /* Constrain form width */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  /* Space between form fields */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1em;
+  color: #333;
+  outline: none;
+  /* Remove default outline */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #a0a0a0;
+  /* Slightly darker border on focus */
+}
+
+.contact-form textarea {
+  resize: vertical;
+  /* Allow vertical resizing of textarea */
+  min-height: 100px;
+}
+
+.submit-button {
+  background: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 12px 30px;
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  align-self: flex-start;
+  /* Align button to the left */
+  margin-top: 10px;
+}
+
+.submit-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* --- Bottom Background Image Section --- */
+.contact-bottom-background {
+  width: 100%;
+  height: 700px;
+  /* Fixed height for the background image section */
+  background-image: url('../Assets/contact-end.jpg');
+  /* Replace with actual path */
+  background-color: #ff0000;
+  /* Fallback color / if image fails */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Adjust to show relevant part of the image */
+  margin-top: 80px;
+  /* Space above the background image */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 850px) {
+  .contact-form-container {
+    flex-direction: column;
+    /* Stack text and form vertically */
+    align-items: center;
+    /* Center them when stacked */
+    gap: 40px;
+  }
+
+  .contact-info-text,
+  .contact-form {
+    max-width: 500px;
+    /* Allow them to take more width when stacked */
+  }
+
+  .contact-info-text {
+    text-align: center;
+    /* Center info text on smaller screens */
+  }
+
+  .submit-button {
+    align-self: center;
+    /* Center button when form is stacked */
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-title {
+    font-size: 3em;
+  }
+
+  .contact-bottom-background {
+    height: 300px;
+    /* Reduce height on very small screens */
+  }
+}

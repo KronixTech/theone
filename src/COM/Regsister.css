@@ -1,0 +1,155 @@
+/* --- REGISTRATION SECTION (REG-CONTAINER) --- */
+/* This container reuses the dual-column layout style of contact-form-container */
+.reg-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px; /* Space between text and form */
+    max-width: 1000px; /* Max width for the form+text block */
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.reg-title {
+  /* Use an actual serif font if available, e.g., 'Playfair Display' */
+  padding: 60px 0 60px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 5em;
+  /* Desktop size */
+  color: #333;
+  letter-spacing: 3px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 30px;
+}
+/* --- LEFT INFO TEXT BLOCK (REG-INFO-TEXT) --- */
+.reg-info-text {
+    flex: 1;
+    max-width: 350px;
+    text-align: left;
+    line-height: 1.7;
+    color: #555;
+    font-size: 0.9em;
+    
+}
+
+.reg-form-heading {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.reg-info-text p {
+    margin-bottom: 1.2em;
+}
+
+.reg-response-time {
+    font-style: italic;
+    font-size: 0.85em;
+    margin-top: 30px;
+    color: #333; /* Ensure verification text is clear */
+    font-weight: bold;
+}
+
+
+/* --- RIGHT FORM BLOCK (REG-FORM) --- */
+.reg-form {
+    flex: 1;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form fields */
+}
+
+/* --- Input, Textarea, and Select Styling --- */
+.reg-form input[type="text"],
+.reg-form input[type="email"],
+.reg-form input[type="tel"],
+.reg-form input[type="date"], /* Added date type */
+.reg-form textarea,
+.reg-form select /* Added select element */ {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 1em;
+    color: #333;
+    outline: none;
+    box-sizing: border-box; /* Crucial for sizing integrity */
+}
+
+.reg-form input:focus,
+.reg-form textarea:focus,
+.reg-form select:focus {
+    border-color: #a0a0a0;
+}
+
+/* Specific styling for the DOB field to handle appearance consistently */
+.reg-form input[type="date"] {
+    /* Ensures date input doesn't look strange on all browsers */
+    line-height: normal; 
+     color: #333;
+}
+
+.reg-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* --- Submit Button Styling --- */
+.reg-submit-button {
+    background: none;
+    color: #333;
+    border: 1px solid #333;
+    padding: 12px 30px;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    align-self: flex-start; /* Align button to the left */
+    margin-top: 10px;
+}
+
+.reg-submit-button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 850px) {
+    .reg-container {
+        flex-direction: column; /* Stack text and form vertically */
+        align-items: center; /* Center them when stacked */
+        gap: 40px;
+    }
+
+    .reg-info-text,
+    .reg-form {
+        max-width: 500px; /* Allow them to take more width when stacked */
+        text-align: center; /* Center info text on smaller screens */
+    }
+
+    .reg-submit-button {
+        align-self: center; /* Center button when form is stacked */
+    }
+}
+/* --- Responsive Adjustments --- */
+@media (max-width: 850px) {
+   
+.reg-title {
+  /* Use an actual serif font if available, e.g., 'Playfair Display' */
+  padding: 60px 0 60px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 3em;
+  /* Desktop size */
+  color: #333;
+  letter-spacing: 3px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 30px;
+}
+}

@@ -1,0 +1,112 @@
+/* =================================
+   BASE STYLES (from Tailwind utilities)
+   ================================= */
+.page-wrapper {
+    background-color: #f3f4f6; /* bg-gray-100 */
+    min-height: 100vh;
+    padding: 1rem; /* p-4 */
+}
+
+@media (min-width: 640px) { /* sm:p-8 */
+    .page-wrapper {
+        padding: 2rem;
+    }
+}
+
+.content-container {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-heading {
+   padding: 60px 0 60px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 5em;
+  /* Desktop size */
+  color: #333;
+  letter-spacing: 3px;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 10px;
+}
+
+@media (min-width: 640px) { /* sm:text-5xl */
+    .main-heading {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+
+
+/* =================================
+   GALLERY CONTAINER AND GRID
+   (Replaces: grid, gap-[5px], p-[5px], md/lg/xl grid-cols)
+   ================================= */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* grid-cols-1 */
+    gap: 5px; /* gap-[5px] */
+    padding: 5px; /* p-[5px] */
+    transition: all 0.3s ease-in-out; /* transition-all duration-300 */
+}
+
+/* Tablet: 2 columns (md:grid-cols-2) */
+@media (min-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Desktop: 3 columns (lg:grid-cols-3) */
+@media (min-width: 1024px) {
+    .gallery-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Large Desktop: 6 columns (xl:grid-cols-6 - assuming 1440px for this wide layout) */
+@media (min-width: 1440px) {
+    .gallery-container {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+
+/* =================================
+   GALLERY ITEM AND IMAGE STYLES
+   (Replaces: group/link, h-[400px], overflow-hidden, hover effects)
+   ================================= */
+.gallery-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    height: 400px; /* h-[400px] */
+    max-height: 400px; /* max-h-[400px] */
+    cursor: pointer;
+}
+
+.gallery-thumb {
+    position: relative;
+    height: 100%;
+}
+
+.gallery-image {
+    width: 100%; /* w-full */
+    height: 100%; /* h-full */
+    object-fit: cover;
+    display: block;
+    transition: all 0.3s ease-in-out; /* transition-all duration-300 */
+}
+
+/* Grayscale effect on container hover (group-hover/gallery:grayscale) */
+.gallery-container:hover .gallery-image {
+    filter: grayscale(100%);
+}
+
+/* Remove grayscale and scale up on item hover (group-hover/link:grayscale-0 group-hover/link:scale-[1.1]) */
+.gallery-item:hover .gallery-image {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}

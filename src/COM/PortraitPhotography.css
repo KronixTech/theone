@@ -1,0 +1,125 @@
+/* --- Main Section Layout --- */
+.portrait-photography-section {
+  max-width: 1200px;
+  /* Example max width, adjust as needed */
+  margin: 80px auto;
+  /* Spacing from previous section */
+  padding: 0 20px;
+}
+
+/* --- Image Gallery Layout --- */
+.portrait-image-gallery {
+  display: flex;
+  justify-content: center;
+  /* Center the overall image block */
+  align-items: flex-start;
+  /* Align the top of the images */
+  position: relative;
+  /* Needed for absolute positioning of the smaller image if desired, or for offset margin */
+  gap: 20px;
+  /* Space between the main and smaller image containers */
+  margin-bottom: 50px;
+  /* Space between images and content below */
+}
+
+.portrait-image-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Using padding-bottom for aspect ratio with background images */
+  height: 0;
+}
+
+.main-portrait {
+  flex: 0 1 500px;
+  /* Fixed width for the main image, adjust as needed */
+  padding-bottom: 600px;
+  /* Aspect ratio (height roughly 1.2x width) */
+  background-image: url('../Assets/pp8.jpg');
+  /* Replace with actual path */
+}
+
+.small-portrait {
+  flex: 0 1 250px;
+  /* Fixed width for the small image */
+  padding-bottom: 300px;
+  /* Aspect ratio (height roughly 1.2x width) */
+  background-image: url('../Assets/pp6.jpg');
+  /* Replace with actual path */
+
+  /* Positioning the small image relative to its place in the flex container */
+  margin-top: 80px;
+  /* Push the small image down */
+  margin-left: -100px;
+  /* Pull it slightly to the left to overlap the gap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Optional: subtle shadow for depth */
+}
+
+
+/* --- Content Area Layout --- */
+.portrait-content-area {
+  max-width: 1200px;
+  /* Align text with the left edge of the main image */
+  text-align: center;
+  /* Adjust to align with the start of the main image */
+  /* This calculation assumes 'main-portrait' has a flex-basis of 500px and the gallery is centered */
+}
+
+
+.portrait-section-title {
+  font-family: serif;
+  /* Use a serif font to match the elegant look */
+  font-size: 2.5em;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+
+.portrait-section-description {
+  max-width: 500px;
+  /* Constrain text width to align with the main image */
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 25px;
+
+  /* ALIGNMENT FIX: Center the 500px block itself horizontally */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 1. Base Button Style (For Context) */
+.portrait-see-more-button {
+  background-color: white;
+  /* Base color: Vibrant Orange */
+  color: black !important;
+  /* Fix for blue text color */
+  padding: 10px 25px;
+  border: 2px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* Indicates it's clickable */
+
+  /* ADD A SMOOTH TRANSITION FOR THE HOVER EFFECT */
+  transition: background-color 0.3s ease;
+}
+
+/* 2. HOVER EFFECT */
+.portrait-see-more-button:hover {
+  /* Change the background color to a slightly darker shade on hover */
+  background-color: black;
+  color: white !important;
+  /* Darker Red/Orange */
+
+  /* Optional: Slightly increase the size or change the shadow for visual feedback */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+
+
+
+  .portrait-section-title {
+
+    font-size: 2em;
+  }
+}

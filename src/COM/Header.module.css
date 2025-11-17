@@ -1,0 +1,167 @@
+/* Variables for consistency
+:root {
+  --primary-bg: #1e1e1e;
+  --secondary-bg: #4a4a4a;
+  --text-color: #fff;
+  --hover-color: #a0a0a0;
+  --font-family-elegant: 'Times New Roman', serif;
+}
+
+/* Base Navigation Bar (Nav) */
+.nav {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-family-elegant);
+  height: 60px;
+  position: relative;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+/* Desktop Navigation Links Container */
+.desktopLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navItem {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0 15px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  color: var(--hover-color);
+}
+
+/* Dropdown Styles for PORTFOLIO */
+.dropdownContainer {
+  position: relative;
+  padding: 0 15px;
+  cursor: pointer;
+}
+
+/* Hiding the content by default */
+.dropdownContent {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: var(--secondary-bg);
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  padding: 10px 0;
+}
+
+/* Showing the content on hover */
+.dropdownContainer:hover .dropdownContent {
+  display: block;
+}
+
+.dropdownContent a {
+  color: var(--text-color);
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+  white-space: nowrap;
+  font-size: 0.85rem;
+}
+
+.dropdownContent a:hover {
+  background-color: #616161;
+}
+
+/* Mobile Menu Icon (Hamburger) */
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Mobile Sidebar Menu */
+.mobileSidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background-color: var(--primary-bg);
+  z-index: 1001;
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobileSidebar.open {
+  right: 0;
+  /* Visible when 'open' class is applied */
+}
+
+.sidebarHeader {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  align-self: flex-start;
+  color: var(--text-color);
+}
+
+.closeIcon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.mobileNavItem {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 15px 0;
+  transition: color 0.3s;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+}
+
+.mobileNavItem:last-child {
+  border-bottom: none;
+}
+
+.mobileNavItem:hover {
+  color: var(--hover-color);
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 10px 20px;
+  }
+
+  .desktopLinks {
+    display: none;
+    /* Hide desktop links */
+  }
+
+  .menuIcon {
+    display: block;
+    /* Show hamburger icon */
+  }
+}

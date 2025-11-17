@@ -1,0 +1,180 @@
+/* --- Main Section Layout --- */
+.product-photography-section {
+  /* This container helps center the content and maintain a max-width if needed */
+  max-width: 1200px;
+  /* Example max width */
+  margin: 40px auto;
+  /* Center it horizontally */
+  padding: 0 20px;
+
+}
+
+/* --- Image Gallery Layout (Horizontal Alignment) --- */
+.image-gallery {
+  display: flex;
+  justify-content: center;
+  /* Center the images */
+  align-items: flex-start;
+  /* Align images at the top */
+  gap: 20px;
+  /* Space between the two image containers */
+}
+
+.image-container {
+  /* General styling for image containers */
+  flex: 0 1 45%;
+  /* Allows containers to grow/shrink but not too much, and sets a base width */
+  max-width: 550px;
+  /* Optional: control max size of images */
+  overflow: hidden;
+  /* Ensure images don't overflow */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Specific Image Styles */
+.lipstick-shot {
+  /* This image appears slightly shorter/wider in the design */
+  /* Adjusting aspect ratio for the first image */
+  object-fit: cover;
+  object-position: bottom;
+}
+
+.coke-shot {
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* --- Content Area Layout --- */
+.content-area {
+  /* Align text to match the left margin of the images/design */
+  max-width: 1200px;
+  /* Center the content-area itself */
+  margin: 50px auto 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-family: serif;
+  /* Use a serif font to match the elegant look */
+  font-size: 2.5em;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+
+}
+
+.section-description {
+  max-width: 450px;
+  /* Keep text from being too wide, matching the design */
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 25px;
+
+  /* --- FIX 1: This centers the block element (the paragraph itself) --- */
+  margin-left: auto;
+  margin-right: auto;
+  /* or the shorthand: margin: 0 auto 25px auto; */
+
+  /* The text inside the block is already centered by the parent, but let's keep this */
+  text-align: center;
+
+}
+
+
+/* 1. Base Button Style (For Context) */
+.see-more-button {
+  background-color: white;
+  /* Base color: Vibrant Orange */
+  color: black !important;
+  /* Fix for blue text color */
+  padding: 10px 25px;
+  border: 2px solid black;
+  text-transform: uppercase;
+  cursor: pointer;
+  /* Indicates it's clickable */
+
+  /* ADD A SMOOTH TRANSITION FOR THE HOVER EFFECT */
+  transition: background-color 0.3s ease;
+}
+
+/* 2. HOVER EFFECT */
+.see-more-button:hover {
+  /* Change the background color to a slightly darker shade on hover */
+  background-color: black;
+  color: white !important;
+  /* Darker Red/Orange */
+
+  /* Optional: Slightly increase the size or change the shadow for visual feedback */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+
+  /* --- Gallery Layout FIX: Force Stack and Full Width --- */
+  .image-gallery {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  /* --- CRITICAL FIXES FOR IMAGE VISIBILITY --- */
+  .image-container {
+    /* Ensure containers take up full screen width */
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+
+    /* 1. EXTREME OVERRIDE: Set a definite, visible height */
+    height: 250px !important;
+
+    /* 2. ELIMINATE CONFLICTING PADDING HACK */
+    padding-bottom: 0 !important;
+
+    /* 3. ENSURE BACKGROUND IMAGE IS DISPLAYED CORRECTLY */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    /* Remove any float or positioning that could be hiding it */
+    position: relative !important;
+  }
+
+  /* Target specific images to ensure no overrides are missed */
+  .lipstick-shot {
+    height: 300px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .coke-shot {
+    height: 250px !important;
+    padding-bottom: 0 !important;
+    /* Reverting fixed background-position for mobile compatibility */
+    background-attachment: scroll !important;
+  }
+
+  /* --- Title and Text Adjustments --- */
+  .product-photography-section {
+    padding: 0 10px;
+    margin: 20px auto;
+  }
+
+  .section-title {
+    font-size: 2em;
+    padding: 20px 0 10px;
+  }
+
+  .section-description {
+    font-size: 0.9em;
+    padding: 0 5px;
+    max-width: 100%;
+  }
+
+  .content-area {
+    margin-top: 20px;
+  }
+}

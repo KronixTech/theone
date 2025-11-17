@@ -1,0 +1,119 @@
+/* --- Global Container and Title --- */
+.home-about-section { /* Renamed class */
+  max-width: 900px; /* Constrain the overall width */
+  margin: 60px auto; /* Center the section and add vertical spacing */
+  padding: 0 20px;
+  text-align: center; /* Center the title and images */
+}
+
+.home-about-title { /* Renamed class */
+  font-family: 'Times New Roman', Times, serif; /* Elegant serif font */
+  font-size: 4em;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.home-about-divider { /* Renamed class */
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 0 auto 50px auto;
+  width: 90%;
+}
+
+/* --- Content Layout (Centering the text and images) --- */
+.home-about-content-container { /* Renamed class */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the image stack and text block */
+}
+
+/* --- Image Stacking Effect --- */
+.home-about-image-stack { /* Renamed class */
+  position: relative;
+  width: 300px; /* Define a base area for the stacked images */
+  height: 350px; 
+  margin-bottom: 50px;
+}
+
+.home-about-image { /* Renamed class */
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #fff; /* Optional: A subtle white border */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+/* Image A (Bottom/Left - slightly rotated right) */
+.image-a {
+  width: 200px;
+  height: 250px;
+  top: 40px;
+  left: 10px;
+  transform: rotate(-5deg); /* Counter-clockwise rotation */
+  z-index: 1; /* Keep it on top */
+  background-image: url('../Assets/hero-bg.png');
+}
+
+/* Image B (Top/Right - slightly rotated left) */
+.image-b {
+  width: 250px;
+  height: 300px;
+  top: 0;
+  right: 0;
+  transform: rotate(5deg); /* Clockwise rotation */
+  z-index: 2; /* Ensure it overlaps image A correctly */
+  background-image: url('../Assets/hero-bg.png');
+}
+
+/* --- Text Block Styling --- */
+.home-about-text-block { /* Renamed class */
+  max-width: 650px; /* Constrain the width of the text */
+  text-align: justify; /* Justify text to match the design */
+  line-height: 1.8;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.home-about-text-block p {
+  margin-bottom: 1.5em;
+}
+
+.closing-line {
+  margin-top: 40px;
+  font-style: italic;
+  text-align: center;
+}
+
+.signature {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1em;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+  .home-about-title { /* Renamed class */
+    font-size: 3em;
+  }
+  
+  .home-about-image-stack { /* Renamed class */
+    width: 250px;
+    height: 300px;
+  }
+  
+  .image-b {
+    width: 200px;
+    height: 240px;
+  }
+  
+  .image-a {
+    width: 160px;
+    height: 200px;
+  }
+
+  .home-about-text-block { /* Renamed class */
+    text-align: left; /* Justified text often looks bad on narrow screens */
+  }
+}

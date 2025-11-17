@@ -1,0 +1,111 @@
+/* FashionPhotographySection.css */
+
+/*
+  -------------------------
+  BASE STYLES (Mobile First: <= 480px)
+  -------------------------
+*/
+
+.fashion-photography-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    /* Use a clear, elegant serif font */
+    font-family: 'Times New Roman', serif;
+    margin-top: 30px;
+}
+
+/* Image Styling (Mobile) */
+.fp-image-container {
+    width: 100%;
+    max-width: 400px;
+    /* Constrain image size on mobile for better flow */
+    margin: 0 auto 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.fp-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Heading Styling (Mobile) */
+.fp-heading {
+    font-size: 2rem;
+    font-weight: 300;
+    /* Thin font for elegance */
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Description Styling (Mobile) */
+.fp-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 450px;
+    /* Constrain text width for readability */
+    margin: 0 auto 30px;
+    color: #333;
+}
+
+/* Button Styling */
+.fp-button {
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.fp-button:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/*
+  -------------------------
+  DESKTOP STYLES (Media Query: >= 900px)
+  -------------------------
+*/
+
+@media (min-width: 900px) {
+    .fashion-photography-section {
+        padding: 80px 50px;
+        /* Increased vertical padding */
+    }
+
+    /* Image Styling (Desktop) */
+    .fp-image-container {
+        max-width: 550px;
+        /* Larger image on desktop */
+        margin-bottom: 50px;
+    }
+
+    /* Heading Styling (Desktop) */
+    .fp-heading {
+        font-size: 3rem;
+        /* Larger, more impactful heading */
+        margin-bottom: 30px;
+    }
+
+    /* Description Styling (Desktop) */
+    .fp-description {
+        font-size: 1.1rem;
+        max-width: 700px;
+        /* Wider text block for better line flow */
+    }
+
+    /* Button adjustments are minor, keeping the same look and feel */
+}

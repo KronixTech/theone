@@ -1,0 +1,308 @@
+/* Container and Layout */
+.poric-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.poric-footer-image {
+    width: 100%;
+    height: 650px;
+    margin-top: 20px;
+    background-position: cover;
+    background-size: cover;
+}
+
+@media screen and (max-width: 480px) {
+    .footer-visual {
+        height: 350px;
+    }
+
+}
+
+/* Typography */
+.poric-title {
+    /* Use an actual serif font if available, e.g., 'Playfair Display' */
+    padding: 60px 0 60px;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 5em;
+    /* Desktop size */
+    color: #333;
+    letter-spacing: 3px;
+    font-weight: normal;
+    margin: 0;
+    margin-top: 30px;
+}
+
+.poric-text {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Image Gallery Flexbox */
+.poric-gallery {
+    display: flex;
+    justify-content: center;
+    /* Align items to the top initially, the small one will be pushed down */
+    align-items: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    /* Important for mobile responsiveness */
+}
+
+/* Large Image Styling (Left) */
+.poric-image-large {
+    /* 55% width on larger screens */
+    flex: 0 0 55%;
+    max-width: 660px;
+}
+
+/* Small Image Styling (Right) */
+.poric-image-small {
+    /* 30% width on larger screens */
+    flex: 0 0 30%;
+    max-width: 360px;
+    /* This creates the staggered, offset look */
+    align-self: flex-end;
+}
+
+/* Styling for the actual image element */
+.poric-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* --- Media Query for Responsiveness --- */
+@media (max-width: 800px) {
+    .poric-gallery {
+        /* Stack images vertically on small screens */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .poric-image-large,
+    .poric-image-small {
+        /* Full width minus padding on small screens */
+        flex: 0 0 90%;
+        max-width: 500px;
+        /* Limit max width for readability */
+        align-self: center;
+        /* Center them when stacked */
+    }
+
+    .poric-title {
+        font-size: 2em;
+        letter-spacing: 3px;
+    }
+}
+
+/* src/components/OverlapPortraits.css - REVISED FOR GAP, NO COLLAPSE */
+
+.overlap-portraits-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+    margin-top: 80px;
+    /* Space above this section */
+    width: 100%;
+    max-width: 900px;
+    /* Max width of the entire section */
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.overlap-portrait-one {
+    /* Styles for the smaller B&W close-up image with white background/border */
+    width: 280px;
+    height: 380px;
+    background-color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    position: relative;
+
+    /* --- CRITICAL CHANGE: Remove negative margin, add positive margin for the gap --- */
+    margin-bottom: 30px;
+    /* Adds a clean 30px gap below the top image */
+    /* --------------------------------------------------------------------------------- */
+}
+
+.overlap-portrait-one img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.overlap-portrait-two {
+    /* Styles for the larger color eyes image */
+    width: 100%;
+    max-width: 900px;
+    height: 480px;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    /* No margin changes needed here unless you want to push it away from other content */
+}
+
+.overlap-portrait-two img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    object-position: 50% 65%;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .overlap-portraits-container {
+        margin-top: 40px;
+        width: 90%;
+    }
+
+    .overlap-portrait-one {
+        width: 220px;
+        height: 300px;
+        padding: 15px;
+        margin-bottom: 20px;
+        /* Reduced gap on smaller screens */
+    }
+
+    .overlap-portrait-two {
+        height: 380px;
+    }
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE CONTAINER: CSS GRID SETUP (Standard/Large Screens) */
+/* ------------------------------------------------------------------ */
+.grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: white;
+
+    /* Desktop Grid: Complex 2 Columns, 3 Rows */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    gap: 20px;
+}
+
+/* BASE IMAGE STYLES (Unchanged) */
+.image-wrapper {
+    overflow: hidden;
+    aspect-ratio: 1 / 1.5;
+}
+
+.photo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* SPECIFIC PLACEMENT AND SIZING (Standard/Large Screens) */
+.top-left {
+    grid-area: 1 / 1 / 2 / 2;
+    /* Row 1, Col 1 */
+    align-self: start;
+    justify-self: center;
+    width: 75%;
+    max-width: 250px;
+}
+
+.bottom-left {
+    grid-area: 3 / 1 / 4 / 2;
+    /* Row 3, Col 1 */
+    align-self: center;
+    justify-self: center;
+    width: 90%;
+    max-width: 300px;
+}
+
+.center-right {
+    grid-area: 1 / 2 / 4 / 3;
+    /* Span Rows 1, 2, 3 in Col 2 */
+    align-self: center;
+    justify-self: center;
+    margin-left: 20px;
+    width: 85%;
+    max-width: 450px;
+    height: auto;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* MOBILE STYLING: RE-STRUCTURED GRID FOR SMALL SCREENS (<= 480px) */
+/* ------------------------------------------------------------------ */
+@media (max-width: 480px) {
+    .grid-container {
+        width: 100%;
+        /* Take full width */
+        height: auto;
+        /* Allow height to adjust */
+        padding: 10px;
+        /* Less padding */
+        margin: 0;
+
+        /* Mobile Grid: Simpler 2 Columns, 2 Rows */
+        display: grid;
+        /* Columns: Left (20%) is very narrow, Right (80%) is wide */
+        grid-template-columns: 0.8fr 1.2fr;
+        /* Rows: Top is slightly larger than bottom */
+        grid-template-rows: 1.2fr 1fr;
+        gap: 10px;
+    }
+
+    /* 1. Top-Left Image (Now just Top-Left) */
+    .top-left {
+        /* New Placement: Row 1, Column 1 */
+        grid-area: 1 / 1 / 2 / 2;
+        align-self: start;
+        justify-self: center;
+        width: 100%;
+        /* Take full space in the narrow column */
+        max-width: none;
+        /* Force a smaller, portrait aspect ratio */
+        height: 120px;
+    }
+
+    /* 2. Bottom-Left Image (Now Middle-Left) */
+    .bottom-left {
+        /* New Placement: Row 2, Column 1 */
+        grid-area: 2 / 1 / 3 / 2;
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        max-width: none;
+    }
+
+    /* 3. Center-Right Image (Spanning both rows on the right) */
+    .center-right {
+        /* New Placement: Span Row 1 and 2 in Column 2 */
+        grid-area: 1 / 2 / 3 / 3;
+        align-self: center;
+        justify-self: center;
+
+        margin-left: 0;
+        /* Remove horizontal shift */
+
+        width: 90%;
+        max-width: none;
+        height: 60vh;
+        /* Use viewport height for prominence, but less than 70vh */
+    }
+}
