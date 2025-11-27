@@ -170,7 +170,7 @@ const Head = () => {
                         <ul className="navbar-nav">
                             {navLinks.map((link) => (
                                 <React.Fragment key={link}>
-                                    
+
                                     {/* ⭐️ NEW LOGIC: RENDER About, Regsister, Contact, Home */}
                                     <li className="nav-item">
                                         {/* Determine the 'to' path. Home is '/', others are '/link' */}
@@ -182,13 +182,13 @@ const Head = () => {
                                             {link}
                                         </Link>
                                     </li>
-                                    
+
                                     {/* --- SERVICE/CASTING DROPDOWN (Rendered after About) --- */}
                                     {/* NOTE: We now render this unconditionally after 'About' link, not tied to the 'About' map iteration */}
                                     {link === "About" && (
-                                        <li 
+                                        <li
                                             className={`nav-item dropdown ${isCastingDropdownOpen ? 'show' : ''}`}
-                                            onMouseEnter={() => {setIsCastingDropdownOpen(true); setIsLookBookDropdownOpen(false);}}
+                                            onMouseEnter={() => { setIsCastingDropdownOpen(true); setIsLookBookDropdownOpen(false); }}
                                             onMouseLeave={() => setIsCastingDropdownOpen(false)}
                                             key="desktop-service-dropdown"
                                         >
@@ -201,14 +201,14 @@ const Head = () => {
                                             >
                                                 Service
                                             </button>
-                                            <ul 
+                                            <ul
                                                 className={`dropdown-menu ${isCastingDropdownOpen ? 'show' : ''}`}
                                                 aria-labelledby="navbarCastingDropdown"
                                             >
                                                 {castingSubLinks.map((subLink) => (
                                                     <li key={subLink.path}>
-                                                        <Link 
-                                                            to={subLink.path} 
+                                                        <Link
+                                                            to={subLink.path}
                                                             className={`dropdown-item ${location.pathname === subLink.path ? "active" : ""}`}
                                                             onClick={handleCastingSubLinkClick}
                                                         >
@@ -219,12 +219,12 @@ const Head = () => {
                                             </ul>
                                         </li>
                                     )}
-                                    
+
                                     {/* ⭐️ NEW: LOOKBOOK DROPDOWN (Rendered after Service) */}
                                     {link === "About" && ( // Using 'About' as the anchor still, but rendering the link above
-                                        <li 
+                                        <li
                                             className={`nav-item dropdown ${isLookBookDropdownOpen ? 'show' : ''}`}
-                                            onMouseEnter={() => {setIsLookBookDropdownOpen(true); setIsCastingDropdownOpen(false);}}
+                                            onMouseEnter={() => { setIsLookBookDropdownOpen(true); setIsCastingDropdownOpen(false); }}
                                             onMouseLeave={() => setIsLookBookDropdownOpen(false)}
                                             key="desktop-lookbook-dropdown"
                                         >
@@ -237,14 +237,14 @@ const Head = () => {
                                             >
                                                 LookBook
                                             </button>
-                                            <ul 
+                                            <ul
                                                 className={`dropdown-menu ${isLookBookDropdownOpen ? 'show' : ''}`}
                                                 aria-labelledby="navbarLookBookDropdown"
                                             >
                                                 {lookBookSubLinks.map((subLink) => (
                                                     <li key={subLink.path}>
-                                                        <Link 
-                                                            to={subLink.path} 
+                                                        <Link
+                                                            to={subLink.path}
                                                             className={`dropdown-item ${location.pathname === subLink.path ? "active" : ""}`}
                                                             onClick={handleLookBookSubLinkClick}
                                                         >
@@ -255,7 +255,7 @@ const Head = () => {
                                             </ul>
                                         </li>
                                     )}
-                                    
+
                                     {/* ❌ REMOVED OLD LINK MAPPING LOGIC (It was hiding 'About') */}
                                 </React.Fragment>
                             ))}
@@ -282,8 +282,7 @@ const Head = () => {
                 <ul className="list-unstyled">
                     {navLinks.map((link) => (
                         <React.Fragment key={`mobile-${link}`}>
-                            
-                            {/* ⭐️ NEW LOGIC: Render Home, About, Regsister, Contact */}
+                            {/* 1. Render the main navigation link */}
                             <li className="nav-item" key={`mobile-link-${link}`}>
                                 <Link
                                     to={link === "Home" ? "/" : `/${link.toLowerCase()}`}
@@ -293,11 +292,11 @@ const Head = () => {
                                     {link}
                                 </Link>
                             </li>
-                            
-                            {/* --- SERVICE/CASTING MOBILE DROPDOWN (Rendered after About) --- */}
+
+                            {/* 2. Insert Service Dropdown after 'About' */}
                             {link === "About" && (
                                 <li className={`nav-item mobile-dropdown-item ${isMobileCastingOpen ? "open" : ""}`} key="mobile-casting-parent">
-                                    <span 
+                                    <span
                                         className={`nav-link mobile-dropdown-parent ${isCastingPath ? "active" : ""}`}
                                         onClick={toggleMobileCastingDropdown}
                                     >
@@ -318,11 +317,11 @@ const Head = () => {
                                     </ul>
                                 </li>
                             )}
-                            
-                            {/* ⭐️ NEW: LOOKBOOK MOBILE DROPDOWN (Rendered after Service) */}
+
+                            {/* 3. Insert LookBook Dropdown after 'Service' (which is after 'About') */}
                             {link === "About" && (
                                 <li className={`nav-item mobile-dropdown-item ${isMobileLookBookOpen ? "open" : ""}`} key="mobile-lookbook-parent">
-                                    <span 
+                                    <span
                                         className={`nav-link mobile-dropdown-parent ${isLookBookPath ? "active" : ""}`}
                                         onClick={toggleMobileLookBookDropdown}
                                     >
@@ -343,8 +342,6 @@ const Head = () => {
                                     </ul>
                                 </li>
                             )}
-                            
-                            {/* ❌ REMOVED OLD OTHER MOBILE LINKS LOGIC (It was hiding 'About') */}
                         </React.Fragment>
                     ))}
                 </ul>

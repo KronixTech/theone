@@ -23,6 +23,90 @@
   font-style: normal;
 }
 
+/* Start with the sub-menu hidden/closed */
+.mobile-sub-menu {
+  /* Adjust height/max-height for an animation effect, or use display: none */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  /* Add a smooth transition */
+  padding: 0;
+  /* Remove default padding/margin */
+  margin: 0;
+}
+
+/* When the parent item is 'open', expand the sub-menu */
+.mobile-dropdown-item.open>.mobile-sub-menu {
+  /* Set to a value greater than the expected height of all links */
+  max-height: 300px;
+  /* Or a large number like 500px */
+}
+
+/* Optional: Style the dropdown parent to indicate it's a toggle */
+.mobile-dropdown-parent {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Optional: Rotate the arrow icon */
+.mobile-dropdown-item .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-item.open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Optional: Style the sub-links */
+.mobile-sub-menu .sub-link {
+  padding-left: 30px;
+  /* Indent the sub-links */
+}
+
+/* Start with the sub-menu hidden/closed */
+.mobile-sub-menu {
+  /* Adjust height/max-height for an animation effect, or use display: none */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  /* Add a smooth transition */
+  padding: 0;
+  /* Remove default padding/margin */
+  margin: 0;
+}
+
+/* When the parent item is 'open', expand the sub-menu */
+.mobile-dropdown-item.open>.mobile-sub-menu {
+  /* Set to a value greater than the expected height of all links */
+  max-height: 300px;
+  /* Or a large number like 500px */
+}
+
+/* Optional: Style the dropdown parent to indicate it's a toggle */
+.mobile-dropdown-parent {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Optional: Rotate the arrow icon */
+.mobile-dropdown-item .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.mobile-dropdown-item.open .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Optional: Style the sub-links */
+.mobile-sub-menu .sub-link {
+  padding-left: 30px;
+  /* Indent the sub-links */
+}
+
 .header-container.hidden {
   top: -100px;
   /* Hides the header */
